@@ -1,2 +1,2 @@
 require './app'
-run MonsterBattle
+run Battle

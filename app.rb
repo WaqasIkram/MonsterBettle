@@ -1,11 +1,10 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 
-class MonsterBattle < Sinatra::Base
+class Battle < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
-
   enable :sessions
 
   get '/' do
@@ -13,14 +12,19 @@ class MonsterBattle < Sinatra::Base
   end
 
   post '/names' do
-    session[:player1] = params[:player1]
-    session[:player2] = params[:player2]
+    session[:player_1] = params[:player_1]
+    session[:player_2] = params[:player_2]
     redirect '/play'
   end
 
   get '/play' do
-    @player1 = session[:player1]
-    @player2 = session[:player2]
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
+    erb :play
+  end
+
+  post '/player_1_HP' do
+    
     erb :play
   end
 

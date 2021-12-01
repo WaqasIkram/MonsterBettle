@@ -1,1 +1,6 @@
-<%= @player1 %> vs <%= @player2 %>
+<%= @player_1 %> vs <%= @player_2 %>
+
+<form action='/play' method='post'>
+  <input type='submit' value="<%= @player_1 %>'s hp">
+  <input type='submit' value="<%= @player_2 %>'s hp">
+</form>
