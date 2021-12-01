@@ -1,8 +1,8 @@
 class Hitpoints
-  attr_reader :player_1
+  attr_reader :player_1_HP :player_2_HP
 
   def initialize
-    @player_1 = ''
+    @player_1 = 0
   end
 
   def player_1_HP
@@ -14,6 +14,7 @@ class Hitpoints
   end
 
   def self.instance
-    @counter ||= Counter.new
+    @player_1_HP ||= Hitpoints.new
+    @player_2_HP ||= Hitpoints.new
   end
 end

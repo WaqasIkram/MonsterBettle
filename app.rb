@@ -24,7 +24,12 @@ class Battle < Sinatra::Base
   end
 
   post '/player_1_HP' do
-    
+    Hitpoints.instance.player_1_HP
+    erb :play
+  end
+
+  post '/player_2_HP' do
+    Hitpoints.instance.player_2_HP
     erb :play
   end
 
